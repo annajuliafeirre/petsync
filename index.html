@@ -531,54 +531,30 @@
   <div class="footer-bottom">© 2026 Pet Sync. Todos os direitos reservados.</div>
 </footer>
 
-<script>// ===== menu mobile =====
+<script>
+// ===== menu mobile =====
 const burger = document.getElementById('burger');
 const navMobile = document.getElementById('navMobile');
+
 if (burger) {
   burger.addEventListener('click', () => {
     navMobile.classList.toggle('show');
+    burger.classList.toggle('open'); // Linha nova: Transforma em X
   });
+  
+  // Fecha o menu e desfaz o X ao clicar em qualquer link
   navMobile.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => navMobile.classList.remove('show'));
+    a.addEventListener('click', () => {
+      navMobile.classList.remove('show');
+      burger.classList.remove('open');
+    });
   });
 }
 
-// ===== fallback de imagens (evita ícone quebrado se alguma foto externa falhar) =====
-document.querySelectorAll('img').forEach(img => {
-  img.addEventListener('error', () => {
-    img.style.background = 'linear-gradient(135deg, #CFBFF7, #73FBD3)';
-    img.style.minHeight = '120px';
-  }, { once: true });
-});
+// ... mantenha o restante do código do script (heartbeat, simulação de compra) igual ...
+</script>
 
-// ===== vitals widget: heartbeat animado =====
-const vHeart = document.getElementById('vHeart');
-const heartLine = document.getElementById('heartLine');
-
-function randomHeartRate() {
-  return 88 + Math.floor(Math.random() * 14); // 88–101 bpm
-}
-
-function buildHeartPath() {
-  // gera uma linha tipo ECG com variação leve
-  const points = [0, 20];
-  let x = 0;
-  const segments = 7;
-  for (let i = 0; i < segments; i++) {
-    const baseX = i * 17;
-    points.push(baseX + 6, 20, baseX + 10, 6 + Math.random() * 4, baseX + 14, 30 - Math.random() * 4, baseX + 18, 18);
-  }
-  points.push(120, 18);
-  return points.join(',');
-}
-
-if (vHeart && heartLine) {
-  setInterval(() => {
-    vHeart.textContent = randomHeartRate();
-    heartLine.setAttribute('points', buildHeartPath());
-  }, 2200);
-}
-
+  <script>
 // ===== simulação de compra =====
 const buyForm = document.getElementById('buyForm');
 const summaryText = document.getElementById('summaryText');
