@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet Sync — Monitoramento inteligente para seu pet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-item">📞 (11) 3737-0492</span>
+    <span class="topbar-item">⏱ Suporte 24h — todos os dias</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#home" class="logo">
+  <img src="./assets/image/logo.png"  class="logo-mark">
+  <span class="logo-text">Pet<span class="logo-accent">Sync</span></span>
+</a>
+    <nav class="nav">
+      <a href="#home" class="active">Início</a>
+      <a href="#sobre"> Produto</a>
+      <a href="#app"> App</a>
+      <a href="#coleiras">Coleiras</a>
+      <a href="#comprar">Comprar</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#sobre" class="btn btn-outline">Como funciona?</a>
+      <a href="#comprar" class="btn btn-solid">Quero o meu!</a>
+    </div>
+    <button class="burger" aria-label="Abrir menu" id="burger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="navMobile">
+    <a href="#home">Início</a>
+    <a href="#sobre">O Produto</a>
+    <a href="#app">O App</a>
+    <a href="#coleiras">Coleiras</a>
+    <a href="#comprar">Comprar</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-blob" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow">✦ Aprovado em todos os estados!</span>
+      <h1>Cuide do seu pet com dados,<br> não com <span class="hl">achismo</span>.</h1>
+      <p class="hero-text">
+        A Pet Sync é a coleira + chip que transforma os sinais do seu cão ou gato em informação
+        clara: batimentos, sono, temperatura, estresse e rotina, tudo direto no seu celular. Essa é 
+        uma tecnologia nova no Brasil, garanta o seu!
+      </p>
+      <div class="hero-actions">
+        <a href="#comprar" class="btn btn-solid btn-lg">Simular minha compra</a>
+        <a href="#sobre" class="btn btn-ghost btn-lg">Ver o que ela mede <span class="arrow">→</span></a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><strong>+18.000</strong><span>pets monitorados</span></div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><strong>4,9/5</strong><span>avaliação média</span></div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><strong>100%</strong><span>indolor — chip interno</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-photo-frame">
+        <img class="hero-photo" src="./assets/image/modified_cat_dog.png">
+        
+      </div>
+
+      <!-- vitals widget -->
+      <div class="vitals-card" id="vitalsCard">
+        <div class="vitals-head">
+          <span class="vitals-dot"></span> Pet Sync · ao vivo
+        </div>
+        <div class="vitals-row">
+          <div class="vital">
+            <span class="vital-label">Frequência cardíaca</span>
+            <span class="vital-value" id="vHeart">96</span>
+            <span class="vital-unit">bpm</span>
+          </div>
+          <svg class="vital-spark" viewBox="0 0 120 36" preserveAspectRatio="none">
+            <polyline id="heartLine" points="0,20 10,20 16,6 22,32 28,18 40,18 46,9 52,28 58,18 70,18 120,18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="vitals-grid">
+          <div class="vmini">
+            <span class="vmini-label">Sono (24h)</span>
+            <span class="vmini-value">11,2h</span>
+          </div>
+          <div class="vmini">
+            <span class="vmini-label">Temp. corporal</span>
+            <span class="vmini-value">38,4°C</span>
+          </div>
+          <div class="vmini">
+            <span class="vmini-label">Estresse</span>
+            <span class="vmini-value vmini-ok">Baixo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE FAZEMOS -->
+<section class="about" id="sobre">
+  <div class="about-inner">
+    <div class="about-media">
+      <div class="about-photo about-photo-a">
+        <img src="./assets/image/dogimage.jpg" alt="Border Collie de perto, raça usada para monitoramento com a Pet Sync" loading="lazy">
+      </div>
+      <div class="about-photo about-photo-b">
+        <span class="breed-tag">Sphynx</span>
+        <img src="./assets/image/dogimage.jpg" alt="Gato da raça Sphynx, sem pelagem" loading="lazy">
+      </div>
+      <div class="about-chip-callout">
+        <span class="chip-icon">●</span>
+        <div>
+          <strong>Chip interno indolor</strong>
+          <p>Funciona em cães e gatos de qualquer pelagem — inclusive em raças sem pelo, como o Sphynx.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-copy">
+      <span class="eyebrow eyebrow-dark">Nossa missão</span>
+      <h2>O que a Pet Sync faz</h2>
+      <p class="about-lead">
+        Nosso produto é uma forma de garantir o bem-estar do seu pet. Com ele você acompanha,
+        em tempo real, os sinais que realmente importam — e recebe um diagnóstico breve sempre
+        que algo merece atenção.
+      </p>
+
+      <div class="metric-list">
+        <div class="metric-item">
+          <span class="metric-ico">♥</span>
+          <div>
+            <h3>Frequência cardíaca</h3>
+            <p>Monitoramento contínuo dos batimentos, com alertas em variações fora do padrão do seu pet.</p>
+          </div>
+        </div>
+        <div class="metric-item">
+          <span class="metric-ico">☾</span>
+          <div>
+            <h3>Nível de sono</h3>
+            <p>Qualidade e duração do sono, dia após dia, pra você saber se o descanso está em ordem.</p>
+          </div>
+        </div>
+        <div class="metric-item">
+          <span class="metric-ico">≈</span>
+          <div>
+            <h3>Temperatura corporal</h3>
+            <p>Detecta mudanças de temperatura que podem indicar mal-estar antes que os sintomas apareçam.</p>
+          </div>
+        </div>
+        <div class="metric-item">
+          <span class="metric-ico">◇</span>
+          <div>
+            <h3>Nível de estresse e rotina</h3>
+            <p>Identifica mudanças de comportamento e rotina, com breves diagnósticos direto no app.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="about-footnote">
+        O chip também é usado para <strong>rastreamento do animal</strong> — como é interno, a
+        localização fica sempre ativa e o procedimento é indolor.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- APP DEMO -->
+<section class="appdemo" id="app">
+  <div class="appdemo-inner">
+    <div class="appdemo-copy">
+      <span class="eyebrow eyebrow-dark">No seu bolso</span>
+      <h2>Tudo isso, direto no app</h2>
+      <p class="about-lead">
+        A coleira e o chip conversam com o app Pet Sync em tempo real. Você abre, vê como o
+        Thor está agora e recebe um aviso assim que algo sair do padrão dele.
+      </p>
+
+      <div class="app-feature-list">
+        <div class="app-feature">
+          <span class="app-feature-dot dot-heart"></span>
+          <div>
+            <h3>Sinais vitais ao vivo</h3>
+            <p>Frequência cardíaca, temperatura, respiração, atividade, sono e glicose — atualizados a cada poucos minutos.</p>
+          </div>
+        </div>
+        <div class="app-feature">
+          <span class="app-feature-dot dot-alert"></span>
+          <div>
+            <h3>Alertas que fazem sentido</h3>
+            <p>O app avisa quando a temperatura sobe ou a atividade cai abaixo do habitual — sem alarme falso.</p>
+          </div>
+        </div>
+        <div class="app-feature">
+          <span class="app-feature-dot dot-vet"></span>
+          <div>
+            <h3>Compartilhe com o veterinário</h3>
+            <p>Envie o histórico completo com um toque, direto da consulta ou de casa.</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="#comprar" class="btn btn-solid btn-lg">Quero monitorar meu pet</a>
+    </div>
+
+    <div class="appdemo-visual">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="ph-statusbar">
+            <span>9:41</span>
+            <span class="ph-status-icons">●●● 📶 🔋</span>
+          </div>
+
+          <div class="ph-greeting">
+            <h4>Olá, Ana! <span>👋</span></h4>
+            <span class="ph-avatar">👤</span>
+          </div>
+
+          <div class="ph-pet-card">
+            <div class="ph-pet-photo"><img src="https://images.unsplash.com/photo-1759407262889-a5c4413fe36b?w=120&q=80&auto=format&fit=crop" alt="Thor, Border Collie"></div>
+            <div class="ph-pet-info">
+              <strong>Thor</strong>
+              <span class="ph-pet-breed">Border Collie · 4 anos</span>
+              <span class="ph-status-ok">● Tudo certo</span>
+              <span class="ph-updated">Última atualização: há 2 min</span>
+            </div>
+          </div>
+
+          <div class="ph-section-head">
+            <span>Sinais vitais</span>
+            <span class="ph-see-all">Ver todos ›</span>
+          </div>
+
+          <div class="ph-vitals-grid">
+            <div class="ph-vital">
+              <div class="ph-vital-top"><span>Frequência cardíaca</span><span class="ico ico-heart">♥</span></div>
+              <strong>82 <small>bpm</small></strong>
+              <svg viewBox="0 0 100 24" class="ph-spark spark-heart"><polyline points="0,16 10,16 16,4 22,22 30,12 40,12 48,6 56,18 64,10 76,10 100,10"/></svg>
+            </div>
+            <div class="ph-vital">
+              <div class="ph-vital-top"><span>Temperatura</span><span class="ico ico-temp">🌡</span></div>
+              <strong>38,4 <small>°C</small></strong>
+              <svg viewBox="0 0 100 24" class="ph-spark spark-temp"><polyline points="0,18 20,16 35,17 50,14 65,10 80,8 100,4"/></svg>
+            </div>
+            <div class="ph-vital">
+              <div class="ph-vital-top"><span>Freq. respiratória</span><span class="ico ico-resp">≈</span></div>
+              <strong>24 <small>rpm</small></strong>
+              <svg viewBox="0 0 100 24" class="ph-spark spark-resp"><polyline points="0,14 15,10 30,16 45,8 60,14 75,6 100,12"/></svg>
+            </div>
+            <div class="ph-vital">
+              <div class="ph-vital-top"><span>Atividade</span><span class="ico ico-act">●</span></div>
+              <strong>62 <small>min</small></strong>
+              <svg viewBox="0 0 100 24" class="ph-spark spark-act"><polyline points="0,18 15,16 30,12 45,14 60,6 75,10 100,4"/></svg>
+            </div>
+            <div class="ph-vital">
+              <div class="ph-vital-top"><span>Sono</span><span class="ico ico-sleep">☾</span></div>
+              <strong>8h <small>24m</small></strong>
+              <svg viewBox="0 0 100 24" class="ph-spark spark-sleep"><polyline points="0,20 10,18 20,20 30,6 40,18 50,20 60,8 70,18 80,20 90,6 100,18"/></svg>
+            </div>
+            <div class="ph-vital">
+              <div class="ph-vital-top"><span>Glicose</span><span class="ico ico-glu">◆</span></div>
+              <strong>112 <small>mg/dL</small></strong>
+              <svg viewBox="0 0 100 24" class="ph-spark spark-glu"><polyline points="0,14 15,16 30,10 45,16 60,12 75,18 100,10"/></svg>
+            </div>
+          </div>
+
+          <div class="ph-tabbar">
+            <span class="ph-tab ph-tab-active">⌂</span>
+            <span class="ph-tab">◷</span>
+            <span class="ph-tab">▲</span>
+            <span class="ph-tab">☺</span>
+          </div>
+        </div>
+      </div>
+      <span class="appdemo-tag">Tela inicial do app</span>
+    </div>
+  </div>
+</section>
+
+<!-- COLEIRAS / SERVIÇOS -->
+<section class="collars" id="coleiras">
+  <div class="section-head">
+    <span class="zig">↝</span>
+    <h2>Escolha a coleira ideal</h2>
+    <span class="zig zig-flip">↜</span>
+  </div>
+  <p class="section-sub">Tamanhos e cores para todo tipo de pet — do filhote ao porte gigante.</p>
+
+  <div class="collar-grid">
+    <article class="collar-card">
+      <div class="collar-swatch swatch-p">
+        <span class="collar-ico">🐕</span>
+      </div>
+      <h3>Pet Sync Mini</h3>
+      <p>Para cães e gatos de pequeno porte (até 10kg). Coleira leve em silicone macio.</p>
+      <ul class="collar-meta">
+        <li>Tamanho: 20–30cm</li>
+        <li>Cores: Aquamarine, Periwinkle</li>
+      </ul>
+      <a href="#comprar" class="link-more">Quero essa <span>→</span></a>
+    </article>
+
+    <article class="collar-card">
+      <div class="collar-swatch swatch-c">
+        <span class="collar-ico">🐶</span>
+      </div>
+      <h3>Pet Sync Standard</h3>
+      <p>Para porte médio (10–25kg). O modelo mais usado, equilíbrio entre bateria e conforto.</p>
+      <ul class="collar-meta">
+        <li>Tamanho: 30–45cm</li>
+        <li>Cores: Cyan, Cool Horizon</li>
+      </ul>
+      <a href="#comprar" class="link-more">Quero essa <span>→</span></a>
+    </article>
+
+    <article class="collar-card">
+      <div class="collar-swatch swatch-h">
+        <span class="collar-ico">🐾</span>
+      </div>
+      <h3>Pet Sync Max</h3>
+      <p>Para porte grande e gigante (25kg+). Estrutura reforçada e bateria de longa duração.</p>
+      <ul class="collar-meta">
+        <li>Tamanho: 45–65cm</li>
+        <li>Cores: Soft Periwinkle, Cyan</li>
+      </ul>
+      <a href="#comprar" class="link-more">Quero essa <span>→</span></a>
+    </article>
+  </div>
+
+  <div class="collars-actions">
+    <a href="#comprar" class="btn btn-outline">Tirar dúvidas</a>
+    <a href="#comprar" class="btn btn-solid">Simular compra</a>
+  </div>
+</section>
+
+<!-- SIMULAÇÃO DE COMPRA -->
+<section class="buy" id="comprar">
+  <div class="buy-head">
+    <span class="eyebrow">Simulação de compra</span>
+    <h2>Monte o pedido do seu Pet Sync</h2>
+    <p class="section-sub">Isto é uma simulação — nenhum dado é enviado e nenhuma cobrança é realizada.</p>
+  </div>
+
+  <form class="buy-form" id="buyForm">
+    <div class="buy-grid">
+      
+
+      <!-- Coluna esquerda: configuração do produto -->
+      <div class="buy-card">
+        <h3 class="buy-card-title">1. Sobre o seu pet</h3>
+
+        <label class="field">
+          <span>Espécie</span>
+          <select name="especie" id="especie" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="cao">Cão</option>
+            <option value="gato">Gato</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Porte do animal</span>
+          <select name="porte" id="porte" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="mini">Pequeno (até 10kg) — Pet Sync Mini</option>
+            <option value="standard">Médio (10–25kg) — Pet Sync Standard</option>
+            <option value="max">Grande / gigante (25kg+) — Pet Sync Max</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Motivo principal da compra</span>
+          <select name="motivo" id="motivo" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="saude">Acompanhar saúde e bem-estar</option>
+            <option value="rastreamento">Rastreamento / segurança</option>
+            <option value="idade">Pet idoso — atenção extra</option>
+            <option value="condicao">Condição de saúde pré-existente</option>
+            <option value="curiosidade">Curiosidade / dados do dia a dia</option>
+          </select>
+        </label>
+
+        <h3 class="buy-card-title buy-card-title-spaced">2. Personalize a coleira</h3>
+
+        <label class="field">
+          <span>Tamanho da coleira (cm)</span>
+          <select name="tamanho" id="tamanho" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="20-30">20–30 cm</option>
+            <option value="30-45">30–45 cm</option>
+            <option value="45-65">45–65 cm</option>
+          </select>
+        </label>
+
+        <span class="field-label">Cor da coleira</span>
+        <div class="color-options" id="colorOptions">
+          <label class="color-opt">
+            <input type="radio" name="cor" value="Aquamarine" required>
+            <span class="swatch-dot" bo="background:#73FBD3"></span>
+            Aquamarine
+          </label>
+          <label class="color-opt">
+            <input type="radio" name="cor" value="Strong Cyan">
+            <span class="swatch-dot" style="background:#50C9CE"></span>
+            Strong Cyan
+          </label>
+          <label class="color-opt">
+            <input type="radio" name="cor" value="Cool Horizon">
+            <span class="swatch-dot" style="background:#72A1E5"></span>
+            Cool Horizon
+          </label>
+          <label class="color-opt">
+            <input type="radio" name="cor" value="Soft Periwinkle">
+            <span class="swatch-dot" style="background:#9883E5"></span>
+            Soft Periwinkle
+          </label>
+          <label class="color-opt">
+            <input type="radio" name="cor" value="Periwinkle">
+            <span class="swatch-dot" style="background:#CFBFF7"></span>
+            Periwinkle
+          </label>
+        </div>
+      </div>
+
+      <!-- Coluna direita: dados para compra -->
+      <div class="buy-card">
+        <h3 class="buy-card-title">3. Seus dados</h3>
+
+        <label class="field">
+          <span>Nome completo</span>
+          <input type="text" name="nome" placeholder="Seu nome" required>
+        </label>
+
+        <div class="field-row">
+          <label class="field">
+            <span>E-mail</span>
+            <input type="email" name="email" placeholder="voce@email.com" required>
+          </label>
+          <label class="field">
+            <span>Telefone</span>
+            <input type="tel" name="telefone" placeholder="(00) 00000-0000" required>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Endereço de entrega</span>
+          <input type="text" name="endereco" placeholder="Rua, número, bairro" required>
+        </label>
+
+        <div class="field-row">
+          <label class="field">
+            <span>Cidade</span>
+            <input type="text" name="cidade" placeholder="Cidade" required>
+          </label>
+          <label class="field">
+            <span>CEP</span>
+            <input type="text" name="cep" placeholder="00000-000" required>
+          </label>
+        </div>
+
+        <h3 class="buy-card-title buy-card-title-spaced">4. Pagamento (simulado)</h3>
+
+        <label class="field">
+          <span>Forma de pagamento</span>
+          <select name="pagamento" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="cartao">Cartão de crédito</option>
+            <option value="pix">Pix</option>
+            <option value="boleto">Boleto</option>
+          </select>
+        </label>
+
+        <div class="buy-summary" id="buySummary">
+          <span class="buy-summary-label">Resumo do pedido</span>
+          <p id="summaryText">Preencha as opções para ver o resumo do seu Pet Sync.</p>
+        </div>
+
+        <button type="submit" class="btn btn-solid btn-lg btn-full">Simular compra</button>
+        <p class="buy-disclaimer">Ambiente de demonstração — nenhuma informação real é coletada ou cobrada.</p>
+      </div>
+
+    </div>
+  </form>
+
+  <div class="buy-success" id="buySuccess">
+    <div class="buy-success-card">
+      <span class="success-ico">✓</span>
+      <h3>Pedido simulado com sucesso!</h3>
+      <p id="successText"></p>
+      <button class="btn btn-outline" id="buyAgain">Simular outro pedido</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-text">Pet<span class="logo-accent">Sync</span></span>
+      <p>Bem-estar e segurança do seu pet, sincronizados com você.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#home">Início</a>
+      <a href="#sobre">O Produto</a>
+      <a href="#coleiras">Coleiras</a>
+      <a href="#comprar">Comprar</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Pet Sync. Todos os direitos reservados.</div>
+</footer>
+
+<script src="script.js">// ===== menu mobile =====
+const burger = document.getElementById('burger');
+const navMobile = document.getElementById('navMobile');
+if (burger) {
+  burger.addEventListener('click', () => {
+    navMobile.classList.toggle('show');
+  });
+  navMobile.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navMobile.classList.remove('show'));
+  });
+}
+
+// ===== fallback de imagens (evita ícone quebrado se alguma foto externa falhar) =====
+document.querySelectorAll('img').forEach(img => {
+  img.addEventListener('error', () => {
+    img.style.background = 'linear-gradient(135deg, #CFBFF7, #73FBD3)';
+    img.style.minHeight = '120px';
+  }, { once: true });
+});
+
+// ===== vitals widget: heartbeat animado =====
+const vHeart = document.getElementById('vHeart');
+const heartLine = document.getElementById('heartLine');
+
+function randomHeartRate() {
+  return 88 + Math.floor(Math.random() * 14); // 88–101 bpm
+}
+
+function buildHeartPath() {
+  // gera uma linha tipo ECG com variação leve
+  const points = [0, 20];
+  let x = 0;
+  const segments = 7;
+  for (let i = 0; i < segments; i++) {
+    const baseX = i * 17;
+    points.push(baseX + 6, 20, baseX + 10, 6 + Math.random() * 4, baseX + 14, 30 - Math.random() * 4, baseX + 18, 18);
+  }
+  points.push(120, 18);
+  return points.join(',');
+}
+
+if (vHeart && heartLine) {
+  setInterval(() => {
+    vHeart.textContent = randomHeartRate();
+    heartLine.setAttribute('points', buildHeartPath());
+  }, 2200);
+}
+
+// ===== simulação de compra =====
+const buyForm = document.getElementById('buyForm');
+const summaryText = document.getElementById('summaryText');
+const buySuccess = document.getElementById('buySuccess');
+const successText = document.getElementById('successText');
+const buyAgain = document.getElementById('buyAgain');
+
+const porteLabel = {
+  mini: 'Pet Sync Mini (até 10kg)',
+  standard: 'Pet Sync Standard (10–25kg)',
+  max: 'Pet Sync Max (25kg+)'
+};
+
+const motivoLabel = {
+  saude: 'acompanhar a saúde e o bem-estar',
+  rastreamento: 'rastreamento e segurança',
+  idade: 'cuidado extra com pet idoso',
+  condicao: 'monitorar uma condição de saúde pré-existente',
+  curiosidade: 'curiosidade sobre os dados do dia a dia'
+};
+
+function updateSummary() {
+  if (!buyForm) return;
+  const data = new FormData(buyForm);
+  const especie = data.get('especie');
+  const porte = data.get('porte');
+  const motivo = data.get('motivo');
+  const tamanho = data.get('tamanho');
+  const cor = data.get('cor');
+
+  if (!especie && !porte && !motivo && !tamanho && !cor) {
+    summaryText.textContent = 'Preencha as opções para ver o resumo do seu Pet Sync.';
+    return;
+  }
+
+  let parts = [];
+  if (especie) parts.push(`para seu ${especie === 'cao' ? 'cão' : 'gato'}`);
+  if (porte) parts.push(`modelo ${porteLabel[porte]}`);
+  if (tamanho) parts.push(`coleira de ${tamanho.replace('-', '–')} cm`);
+  if (cor) parts.push(`na cor ${cor}`);
+  if (motivo) parts.push(`com foco em ${motivoLabel[motivo]}`);
+
+  summaryText.textContent = 'Pet Sync ' + parts.join(', ') + '.';
+}
+
+if (buyForm) {
+  buyForm.addEventListener('change', updateSummary);
+
+  buyForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(buyForm);
+    const nome = data.get('nome') || 'tutor(a)';
+    const porte = data.get('porte');
+    const cor = data.get('cor');
+
+    successText.textContent = `Obrigado, ${nome}! Seu ${porte ? porteLabel[porte] : 'Pet Sync'}${cor ? ' na cor ' + cor : ''} foi simulado e chegaria em até 7 dias úteis. Nenhuma cobrança real foi feita.`;
+
+    buyForm.style.display = 'none';
+    buySuccess.classList.add('show');
+    buySuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+}
+
+if (buyAgain) {
+  buyAgain.addEventListener('click', () => {
+    buyForm.reset();
+    updateSummary();
+    buySuccess.classList.remove('show');
+    buyForm.style.display = 'block';
+    buyForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}</script>
+
+
+</body>
+</html>
