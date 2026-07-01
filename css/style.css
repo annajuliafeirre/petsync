@@ -49,6 +49,9 @@ h1,h2,h3{font-family:var(--font-display); margin:0; color:var(--ink); letter-spa
 p{margin:0; color:var(--ink-soft); line-height:1.6;}
 button{font-family:inherit; cursor:pointer;}
 section{position:relative;}
+section[id]{ scroll-margin-top:110px; }
+html{ scroll-padding-top:110px; }
+html, body{ max-width:100%; overflow-x:hidden; }
 
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
@@ -1012,7 +1015,7 @@ body {
 /* ===================== COMPRA ===================== */
 .buy{
   background: radial-gradient(ellipse at 20% 50%, #1e2a52 0%, var(--ink) 60%);
-  padding:100px 32px 110px;
+  padding:clamp(56px, 12vw, 100px) clamp(16px, 5vw, 32px) clamp(56px, 12vw, 110px);
   position:relative;
   overflow:hidden;
 }
@@ -1027,13 +1030,13 @@ body {
   background:radial-gradient(closest-side, rgba(95,230,168,.08), transparent);
   border-radius:50%; pointer-events:none;
 }
-.buy-head{ position:relative; z-index:1; text-align:center; max-width:600px; margin:0 auto 50px; }
+.buy-head{ position:relative; z-index:1; text-align:center; max-width:600px; margin:0 auto clamp(28px, 6vw, 50px); padding:0 4px; }
 .buy-head .eyebrow{ background:rgba(255,255,255,.1); color:var(--periwinkle); }
-.buy-head h2{ color:#fff; font-size:2.1rem; font-weight:800; margin:10px 0 12px; }
-.buy-head .section-sub{ color:#aab1cf; margin-bottom:0; }
+.buy-head h2{ color:#fff; font-size:clamp(1.5rem, 5.5vw, 2.1rem); font-weight:800; margin:10px 0 12px; line-height:1.25; }
+.buy-head .section-sub{ color:#aab1cf; margin-bottom:0; font-size:clamp(.85rem, 2.8vw, 1rem); }
 
 .buy-form{ position:relative; z-index:1; max-width:1080px; margin:0 auto; }
-.buy-grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.buy-grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(16px, 4vw, 28px); }
 .buy-card{
   background:linear-gradient(160deg, #ffffff 0%, #f8f9fe 100%);
   border-radius:var(--radius-lg);
@@ -1041,8 +1044,9 @@ body {
   display:flex;
   flex-direction:column;
   gap:8px;
-  padding:28px;
+  padding:clamp(18px, 5vw, 28px);
   border:1px solid rgba(255,255,255,.6);
+  min-width:0;
 }
 .buy-card-title{
   font-size:1.15rem;
@@ -1053,7 +1057,7 @@ body {
 }
 .buy-card-title-spaced{ margin-top:30px; }
 
-.field{ display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+.field{ display:flex; flex-direction:column; gap:6px; margin-bottom:16px; min-width:0; width:100%; }
 .field span{ font-size:.82rem; font-weight:700; color:var(--ink-soft); }
 .field input, .field select{
   font-family:inherit; font-size:.95rem;
@@ -1062,6 +1066,8 @@ body {
   color:var(--ink);
   transition:border-color .18s ease, box-shadow .18s ease;
   min-height:52px;
+  width:100%;
+  max-width:100%;
 }
 .field input:focus, .field select:focus{
   outline:none; border-color:var(--horizon);
@@ -1071,13 +1077,22 @@ body {
 .field-row .field{ margin-bottom:16px; }
 
 .field-label{ font-size:.82rem; font-weight:700; color:var(--ink-soft); display:block; margin-bottom:10px; }
-.color-options{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:8px; }
+.color-options{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(96px, 1fr));
+  gap:10px;
+  margin-bottom:8px;
+}
 .color-opt{
   display:flex; align-items:center; gap:7px;
   font-size:.8rem; font-weight:600; color:var(--ink-soft);
   border:1.5px solid var(--line); border-radius:999px;
   padding:7px 13px 7px 9px; cursor:pointer;
   transition:border-color .18s ease, background .18s ease;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  justify-content:flex-start;
 }
 .color-opt:has(input:checked){
   border-color:var(--horizon); background:rgba(114,161,229,.08); color:var(--ink);
@@ -1159,6 +1174,27 @@ body {
   .header-inner{ padding:14px 20px; }
   .about, .collars, .buy, .appdemo{ padding-left:20px; padding-right:20px; }
   .phone-frame{ width:260px; }
+}
+
+/* ===================== COMPRA — AJUSTE FINO MOBILE ===================== */
+@media (max-width: 600px){
+  .buy{ padding:48px 14px 60px; }
+  .buy-head{ margin-bottom:26px; }
+  .buy-head h2{ font-size:1.5rem; }
+  .buy-card{ padding:18px; border-radius:20px; }
+  .buy-card-title{ font-size:1.05rem; margin-bottom:16px; padding-bottom:10px; }
+  .buy-card-title-spaced{ margin-top:24px; }
+  .field{ margin-bottom:14px; }
+  .field input, .field select{ padding:11px 12px; font-size:.9rem; min-height:48px; }
+  .color-options{ grid-template-columns:repeat(auto-fill, minmax(84px, 1fr)); gap:8px; }
+  .color-opt{ font-size:.75rem; padding:6px 10px 6px 8px; }
+  .swatch-dot{ width:14px; height:14px; }
+  .buy-summary{ padding:14px; margin:18px 0; }
+  .buy-success-card{ padding:34px 22px; }
+}
+
+@media (max-width: 360px){
+  .color-options{ grid-template-columns:repeat(2, 1fr); }
 }
 
 /* ===================== BURGER E MENU MOBILE 100% RESPONSIVO ===================== */
